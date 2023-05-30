@@ -1,0 +1,62 @@
+::ng-deep {
+    
+    .cont{
+        max-height: 200px; 
+        background-color: white;
+        position: absolute;
+        border: 1px solid #ddd; 
+        border-top-right-radius: 5px; 
+        border-top-left-radius: 5px; 
+        z-index: 1; 
+    }
+
+    .suggestion-list{
+       margin-left : 14px;
+       max-height: 100px;
+       width: 690px;
+       overflow-y: scroll;
+    }
+
+    .suggestion-list ul{
+        list-style-type: none; 
+        padding-left: 15px; 
+        margin: 0;
+     }
+
+    .suggestion-list ul li{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .no-left-padding{
+        padding-left: 0px
+    }
+    
+    .search-form{
+        padding-right: 0px;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        position: absolute;
+        background-color: black;
+        z-index: 1;
+    }
+    
+    
+    form ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        padding: 10px
+    }
+    
+    .suggestions{
+        margin:auto; 
+        background-color: blue;
+        border: 1px solid #ddd; 
+        opacity: 1; 
+        
+    }
+    
+    
+}
+

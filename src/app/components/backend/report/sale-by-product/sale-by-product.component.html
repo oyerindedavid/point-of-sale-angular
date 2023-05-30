@@ -1,0 +1,116 @@
+<!-- Row -->
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                <div class="row row-sm">
+                    <div class="col-lg-8" style="display: inline-block;">
+                         <div class="input-group">
+                             <div class="input-group-prepend">
+                                 <div class="input-group-text">
+                                     <i class="fe fe-calendar  lh--9 op-6"></i>
+                                 </div>
+                             </div>
+                             <input type="text"  
+                             [showCustomRangeLabel]="true"
+                             [alwaysShowCalendars]="true"
+                             [isInvalidDate] = "isInvalidDate"
+                             (rangeClicked)="rangeClicked($event)"
+                             placeholder="Choose date range" [ranges]="ranges" class="form-control w-50" ngxDaterangepickerMd [(ngModel)]="selected"
+                                 [locale]="{applyLabel: 'Apply', customRangeLabel: 'Custom range', format: 'DD-MM-YYYY'}" [showCancel]="true" />
+                         </div>
+                     </div>
+                </div><br>
+
+                <div class="row row-sm">
+                    <div class="col-lg-4">
+                        <p class="mg-b-10">Location</p>
+                        <ng-select class="form-control" [formControl]="locationAreaId" (change)='getDevicesByLocation()' placeholder="Choose One">
+                            <ng-option value="0" selected>Select All</ng-option>
+                            <ng-option *ngFor="let locationArea of locationAreas" value="{{locationArea.id}}">{{locationArea.name}}</ng-option>
+                        </ng-select>
+                    </div>
+                    <div class="col-lg-3 mg-t-20 mg-lg-t-0"> </div>
+                    <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+                        <p class="mg-b-10">Select device</p>
+                        <ng-select class="form-control" [items]="deviceList"
+                                bindLabel="name"
+                                [multiple]="true"
+                                [(ngModel)]="selectedDevices">
+                        </ng-select>
+                    </div>
+                </div><br/>
+
+                <div class="row row-sm">
+                    <div class="col-lg-4">
+                        <p class="mg-b-10">Device group</p>
+                        <ng-select class="form-control" [(ngModel)]="devicesInDeviceGroup"  (change)='getDevicesByGroup()' placeholder="Choose One">
+                            <ng-option *ngFor="let deviceGroup of deviceGroups" value="{{deviceGroup.devices}}">{{deviceGroup.name}}</ng-option>
+                       </ng-select>
+                    </div>
+                    <div class="col-lg-3 mg-t-20 mg-lg-t-0"> </div>
+                    <div class="col-lg-4 mg-t-20 mg-lg-t-0">
+                        <p class="mg-b-10">Staff</p>
+                        <ng-select class="form-control" [formControl]="staffId">
+                            <ng-option value="0" >Select All</ng-option>
+                            <ng-option *ngFor="let staff of staffs" value="{{staff.id}}">{{staff.username}}</ng-option>
+                        </ng-select>
+                    </div>
+                </div><br/>
+
+                <div class="row row-sm">
+                    <div class="col-lg-4">
+                        <p class="mg-b-10">Product</p>
+                        <div class="input-group">
+                            <input type="text" [formControl]="keyword" class="form-control" placeholder="Search with product name or barcode">
+                            <span class="input-group-append">
+                                <button class="btn ripple btn-primary" (click)="runQuery()" type="button">Search </button>
+                            </span>
+                        </div>
+                    </div>
+                </div><br/>
+
+                <div class="table-responsive border">
+                    <table class="table card-table table-striped table-vcenter text-nowrap mb-0" >
+                        <thead>
+                            <tr>
+                                <th class="wd-30p">Product</th>
+                                <th class="wd-5p">Qty</th>
+                                <th class="wd-10p">Cost Price</th>
+                                <th class="wd-10p">Sale Price</th>
+                                <th class="wd-10p">Discount</th>
+                                <th class="wd-15p">Net Sale</th>
+                                <th class="wd-15p">Total Margin</th>
+                                <th class="wd-10p">Total Margin %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let sale of sales">
+                                <td>{{sale.name}}</td>
+                                <td>{{sale.qty}}</td>
+                                <td>{{sale.cost_price | currency: '₦': 'symbol': '4.2-2'}}</td>
+                                <td>{{sale.selling_price | currency: '₦': 'symbol': '4.2-2'}}</td>
+                                <td>{{sale.discount}}</td>
+                                <td>{{sale.net_sale | currency: '₦': 'symbol': '4.2-2'}}</td>
+                                <td>{{sale.margin | currency: '₦': 'symbol': '4.2-2'}}</td>
+                                <td>{{sale.percentage_margin }}</td>
+                            </tr>
+                            <tr *ngIf="sales.length != 0" class="calculate" style="background-color: #0a044f;">
+                                <td>Total :</td> 
+                                <td>{{totalProductQty}}</td>
+                                <td>{{totalCostPrice | currency: '₦': 'symbol': '2.2-2'}}</td>
+                                <td>{{totalUnitPrice | currency: '₦': 'symbol': '2.2-2'}}</td>
+                                <td>{{totalOfDiscount | currency: '₦': 'symbol': '2.2-2'}}</td>
+                                <td>{{netSaleTotal | currency: '₦': 'symbol': '2.2-2'}}</td>
+                                <td>{{totalOfMargins | currency: '₦': 'symbol': '2.2-2'}}</td> 
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->

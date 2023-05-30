@@ -1,0 +1,46 @@
+.trans-content{
+    padding-top: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.id-card{
+    color: rgb(253, 249, 249);
+    background-color: blue;
+    height: 100px;
+    margin-right: 5px;
+    margin-top: 5px;
+    padding: 40px;
+}
+
+.modal {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+  }
+
+  div a{
+      color: white
+  }
+  
+  .modal-header{
+    background-color: #1a0a8a;
+    color: white;
+  }
+
+/*Product Container*/
+.content-body{
+background-color: #1a0a8a;
+height: 94vh;
+
+}
+
+left-spacer{
+    margin-left: 15px;
+}
+

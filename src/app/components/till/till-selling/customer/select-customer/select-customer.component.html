@@ -1,0 +1,27 @@
+<nav class="navbar">
+    <div style="float:left; padding-top: 12px; padding-left: 10px;">
+       <a style="color: black;" (click)="backClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </div>  
+      <ul class="nav navbar-nav" style="margin-left: 40%;">
+        <li><a class="nav-li" routerLink="/till-end/transactions/completed"><b>Cutomers</b></a></li>
+      </ul>
+</nav>
+
+<div class="trans-content">
+    <div class="tab-content" >
+      <div class=" colap-body">
+        <div class="colap-heading" >Customers</div>
+        <div class=" colap-content">
+            <div *ngFor="let customer of customers">
+                <div class="row held-basket">
+                    <div class="col-lg-9 cust-name">{{customer.firstname}}</div>
+                    <div class="col-lg-3">
+                        <button type="button" class="btn btn-primary spacer" (click)="selectCustomer(customer)">Select</button>
+                        <button type="button" class="btn btn-warning spacer">Edit</button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div> 

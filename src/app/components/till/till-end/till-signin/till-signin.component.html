@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="content-body">
+         <div class="trans-content">
+             <div class="row">
+                 <div *ngFor="let staff of staffs">
+                     <div class="col-lg-2 id-card text-center" (click)="selectUser(staff.username)" data-toggle="modal" data-target="#signIn">
+                         <b>{{staff.username}}</b>
+                     </div>
+                 </div>
+             </div>
+         </div>  
+        </div>
+    </div>
+ </div>
+ 
+ <!-- The Modal -->
+ <div class="modal " id="signIn">
+     <div class="modal-dialog modal-dialog-centered">
+       <div class="modal-content">
+ 
+         <!-- Modal Header -->
+         <div class="modal-header">
+           <h4 class="modal-title">Welcome {{username}}</h4>
+         </div>
+ 
+         <!-- Modal body -->
+         <div class="modal-body">
+             <form role="form" [formGroup]="signinForm">
+                 <div class="form-group">
+                     <label class="control-label">Password</label>
+                     <div>
+                         <input type="password" class="form-control input-lg" formControlName="password">
+                     </div>
+                 </div>
+             </form>
+         </div>
+ 
+         <!-- Modal footer -->
+         <div class="modal-footer">
+           <button type="button" class="btn btn-primary" (click)="signIn()" data-dismiss="modal">Sign In</button>
+           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+ </div>
+ 

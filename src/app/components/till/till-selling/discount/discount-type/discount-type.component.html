@@ -1,0 +1,17 @@
+<div class="nav-info">
+    <div style="float:left; padding-top: 10px;">
+        <a (click)="backClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </div>
+    <div style="text-align: center;">
+        <a class="nav-link"><h4><b>Discount Format</b></h4></a>
+    </div>
+</div>
+<div class="content-container">
+    <div class="discount-box">
+        <div class="discount-reason">
+            <div *ngFor="let discountType of discountTypes">
+                <a (click)="addReason(discountType)" class="reason">{{discountType.name}}</a><hr>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<!-- Page Header -->
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">Add brand</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;">Manage</a></li>
+            <li class="breadcrumb-item active" aria-current="page">add brand</li>
+        </ol>
+    </div>
+    <div class="d-flex">
+        <div class="justify-content-center">
+            <button type="button" routerLink="/mg/brands" class="btn btn-primary my-2 btn-icon-text">
+                <i class="fe fe-list"></i> Brand list
+            </button>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Row -->
+<div class="row row-sm">
+    <div class="col-lg-12 col-md-12">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Add new brand</h6>
+                    <p class="text-muted card-sub-title">Fill the form below to add brand.</p>
+                </div>
+                <form [formGroup]="brandForm">
+                    <div class="">
+                        <div class="row row-xs align-items-center mg-b-20">
+                            <div class="col-md-2">
+                                <label class="mg-b-0">Brand name</label>
+                            </div>
+                            <div class="col-md-6 mg-t-5 mg-md-t-0">
+                                <input class="form-control" formControlName="brand_name" placeholder="brand name" type="text">
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-end mb-0">
+                            <div class="col-md-10 pl-md-2">
+                                <button class="btn ripple btn-primary mr-1" (click)="addBrand(successmodal,warningmodal)" type="button">
+                                    <span aria-hidden="true" *ngIf="loading"
+                                        class="spinner-border spinner-border-sm" role="status">
+                                    </span> 
+                                    <span class="sr-only">Loading...</span> {{buttonText}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<ng-template #successmodal let-modal>
+    <!-- Congratulations MODAL -->
+    <div class="modal-body text-center p-4">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <i class="icon ion-ios-checkmark-circle-outline tx-100 tx-success lh-1 mg-t-20 d-inline-block"></i>
+        <h4 class="tx-success tx-semibold mg-b-20">Success!</h4>
+        <p class="mg-b-20 mg-x-20">The category as been added successfully.</p>
+        <button type="button" class="btn btn-success pd-x-25 mr-0"
+            (click)="modal.close('Close click')">Continue</button>
+    </div>
+</ng-template>
+
+<ng-template #warningmodal let-modal>
+    <!-- Warning MODAL -->
+    <div class="modal-body text-center p-4">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <i class="icon icon ion-ios-close-circle-outline tx-100 tx-danger lh-1 mg-t-20 d-inline-block"></i>
+        <h4 class="tx-danger mg-b-20">Error: {{errorCaption}}</h4>
+        <p class="mg-b-20 mg-x-20">{{errorMessage}}</p>
+        <button type="button" class="btn btn-danger pd-x-25 mr-0" (click)="closeModal()">Continue</button>
+    </div>
+</ng-template>

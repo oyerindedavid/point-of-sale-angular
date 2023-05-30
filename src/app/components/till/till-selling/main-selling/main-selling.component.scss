@@ -1,0 +1,132 @@
+
+nav{
+    border-radius: 0px;
+  }
+  
+  .info-container{
+    height: 100px;
+    width: 180px;
+    display: inline-block;
+    
+    margin: 6px;
+    text-justify: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .info-price{
+    position: absolute;
+    bottom: 5px;
+  }
+  
+  .form-bar{
+    float: right;
+  }
+  
+  /*Sale Box Start*/
+  
+  .modal-header{
+    background-color: #1a0a8a;
+    color: white;
+  }
+  
+  
+  .top-bar{
+    width: 100%;
+    height: 45px;
+    padding-left: 25px;
+    padding-top: 3px;
+    background-color: #120661;
+  }
+  
+  .sub-top-bar{
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+  }
+  
+  .bar-icon{
+    color:white;
+  }
+  
+  
+  
+  .small-box{
+    height: 50px;
+    width: 50px;
+    background-color: darkblue;
+    
+  }
+  
+  
+  /*Sale Box End*/
+  
+  .center-text{
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .top-nav{
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: grey;
+  }
+  
+  /*Left bar Start*/
+  
+  .left-bar{
+    border-right-style: solid;
+    border-width: 1px;
+    height: 93vh;
+    position: fixed; /* Stay in place */
+    z-index: 1;
+    background-color: #fdfdff;
+  }
+  
+  .nav-val{
+    color: white;
+  }
+  
+  ul {
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+  
+  }
+    
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change the link color on hover */
+    li a:hover {
+      background-color: #f1f1f1;
+      color: white;
+    }
+  
+    /*Left Bar End*/
+    .vl {
+      border-left: 1px solid grey;
+      height: 30px;
+      margin-top: 10px;
+    }
+  
+    /*Product Container*/
+    .product-container{
+      background-color: #1a0a8a;
+      height: 93vh;
+    }
+
+    @media print{
+      .doNotPrint{display:none !important;}
+   }
+  
+   
+  
+    

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+            <app-top-bar></app-top-bar>
+       </div> 
+  </div>
+   <div class="row">
+       <div class="content-body">
+        <div class="trans-content">
+            <div class="row">
+                <div *ngFor="let device of devices">
+                    <div class="col-lg-2 id-card text-center" (click)="selectDevice(device)" data-toggle="modal" data-target="#signIn">
+                        <ng-container *ngIf="device.is_assigned == 1">
+                            <i class="fa fa-lock" aria-hidden="true"></i>
+                        </ng-container>
+                        <b class="left-spacer">{{device.name}}</b>
+                    </div>
+                </div>
+            </div>
+        </div>  
+       </div>
+   </div>
+</div>
+
+
+ 

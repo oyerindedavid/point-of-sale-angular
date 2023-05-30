@@ -1,0 +1,42 @@
+.nav-info{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(77, 77, 230);
+    padding: 6px;
+    text-align: center;
+} 
+
+/*Product Container*/
+.content-container{
+    background-color: #1a0a8a;
+    height: 88vh;
+    padding-top: 20px;
+  }
+
+  .nav-link{
+      color: white;
+  }
+
+  .discount-box{
+      background-color: rgb(248, 246, 246);
+      height: 400px;
+      width: 300px;
+      margin-left: 35%;
+  }
+
+  .discount-reason{
+      padding-left: 20px;
+      padding-top:5px;
+      padding-right: 10px;
+  }
+
+  a.reason{
+      color: black;
+      font-size: medium;
+      font-weight: bold;
+  }
+
+  .fa-arrow-left{
+    color:black; 
+    font-size: large;
+  }

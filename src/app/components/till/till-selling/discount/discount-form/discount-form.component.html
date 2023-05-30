@@ -1,0 +1,21 @@
+<div class="nav-info">
+    <div style="float:left; padding-top: 10px;">
+        <a (click)="backClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </div>
+    <div style="text-align: center;">
+        <a class="nav-link"><h4><b>Discount Worth</b></h4></a>
+    </div>
+</div>
+<div class="content-container">
+    <div class="discount-box">
+        <div class="discount-reason">
+            <span><h3>Enter Amount</h3></span>
+            <div class="discount">
+                <input type="number" [formControl]="discount" class="form-control" >
+                
+            </div>
+            <button type="button" (click)="applyBasketItemDiscount()" class="btn btn-primary submit-discount" >Submit</button>
+            
+        </div>
+    </div>
+</div>

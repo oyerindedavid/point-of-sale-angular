@@ -1,0 +1,110 @@
+<!-- Row -->
+<div class="row row-sm" [formGroup]="stockForm">
+    <div class="col-lg-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                   <div class="row row-sm">
+                        <div class="col-lg-3">
+                            <ng-select class="form-control" formControlName="locationAreaId" placeholder="Select location">
+                                <ng-option *ngFor="let locationArea of locationAreas" value="{{locationArea.id}}">{{locationArea.name}}</ng-option>
+                            </ng-select>
+                        </div>
+                        <div class="col-lg-4">
+                            <ng-select class="form-control" formControlName="reasonId" placeholder="Select reason for stock take">
+                                <ng-option *ngFor="let reason of reasons" value="{{reason.id}}">{{reason.name}}</ng-option>
+                            </ng-select>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-3">
+                            <button type="button" (click)="saveStock()" class="btn ripple btn-primary pd-x-30 mg-r-5 mb-2">Review stock take </button>
+                        </div>
+                    </div>
+                
+    
+                    <div class="row row-sm">
+                        <div class="col-lg-7">
+                            <div class="cont" >
+                                <div class="row">
+                                    <div class=" col-lg-12">
+                                        <div class="input-group">
+                                            <input type="text" [value]="selectedProduct" [formControl]="keyword" (keyup)="searchProduct($event)" class="form-control" placeholder="Enter product name">
+                                        </div>
+                                    </div>
+                                    <div class="suggestion-list">
+                                        <ng-container *ngIf="isProductExist == true">
+                                            <ul> 
+                                                <ng-container *ngFor="let product of products">
+                                                    <li>
+                                                        <div (click)="selectProduct(product)" class="row" >
+                                                             <div class=" col-sm-8">{{product.name}}</div>
+                                                             <div class=" col-sm-4"></div>
+                                                        </div>
+                                                    </li>
+                                                </ng-container>
+                                            </ul>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="col-lg-3">
+                            <button type="button" (click)="saveStock()" class="btn ripple btn-primary pd-x-30 mg-r-5 mb-2">Save stock </button>
+                        </div>
+                    </div>
+                
+
+                <div class="table-responsive border">
+                    <table class="table card-table table-striped table-vcenter text-nowrap mb-0" >
+                        <thead>
+                            <tr>
+                                <th class="wd-20p">Name</th>
+                                <th class="wd-10p">Category</th>
+                                <th class="wd-10p">Barcode</th>
+                                <th class="wd-15p">Supplier</th>
+                                <th class="wd-10p">Brand</th>
+                                <th class="wd-15p">Current stock</th>
+                                <th class="wd-15p">New stock</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <ng-container >
+                                <ng-container formArrayName="stocks">
+                                    <tr *ngFor="let stock of stockArray; let i = index" [formGroupName]="i" >
+                                        <td>{{stock.name}}</td>
+                                        <td>{{stock.category}}</td>
+                                        <td>{{stock.barcode}}</td>
+                                        <td>{{stock.supplier}}</td>
+                                        <td>{{stock.brand}}</td>
+                                        <input type="hidden" formControlName="productId" class="form-control">
+                                        <td>
+                                            <div class="input-group">
+                                                <input type="text" formControlName="currentStock" class="form-control">
+                                                <div class="input-group-append" (click)="setNewStockAsCurretStock(i)">
+                                                    <span style="cursor:pointer;" class="input-group-text">-></span>
+                                                </div>
+                                            
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-group">
+                                                <input type="text" (change)="updateArrayStock(i)" formControlName="newStock" class="form-control">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <a href="javascript:;" (click)="removeStock(i)" class="btn btn-sm btn-danger">
+                                                <i class="fe fe-trash"></i> 
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </ng-container>  
+                            </ng-container>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->

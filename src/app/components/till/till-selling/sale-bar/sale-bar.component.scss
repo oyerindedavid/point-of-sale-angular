@@ -1,0 +1,263 @@
+  
+  /*Sale Box Start*/
+
+  .sale-bar{
+    border-left-style: solid;
+    border-width: 1px;
+    height: 99vh;
+  }
+  
+  .prd{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(41, 41, 115);
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: white;
+    color: white;
+    
+  }
+  
+  .prd-info{
+    height:auto!important; /*this set the height to auto for those supporting it (not IE)*/
+    height:70px; /*for IE, all others override it by the previous rule*/
+    min-height:10px;
+  }
+  
+  .prd-qty{
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    height: 30px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .unit-price{
+    font-style: italic;
+    font-size: small;
+  }
+  
+  .decrement{
+    padding-top: 5%;
+    cursor: pointer;
+  }
+  
+  .total-price{
+    padding-top: 2%;
+    padding-left: 15px;
+  }
+  
+  .action-button{
+    padding-top: 2%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-radius: 30px;
+    float: right;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .action-btn-text{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+  }
+  
+  .del-cont{
+    position: absolute;
+    right:10px;
+  }
+  
+  .del-icon{
+    padding-top: 3px;
+  }
+  
+  .action-buton-cont{
+    padding-top: 5px;
+    height: 60px;
+  }
+  
+  .item-action-icon{
+    padding-top: 3px;
+    
+  }
+  
+  .prd-name{
+    padding-top: 0%;
+  }
+  
+  .top-bar{
+    width: 100%;
+    height: 45px;
+    padding-left: 25px;
+    padding-top: 3px;
+    background-color: #120661;
+  }
+  
+  .sub-top-bar{
+    width: 100%;
+    height: 30px;
+    justify-content: center;
+  }
+  
+  .bar-icon{
+    color:white;
+  }
+  
+  .qty{
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: white;
+    padding-top: 5%;
+    background-color: white;
+    color: black;
+  }
+  
+  .pr-val{
+    text-align: center;
+  }
+  
+  .increment{
+    padding-top: 5%;
+    cursor: pointer;
+  }
+  
+  .small-box{
+    height: 50px;
+    width: 50px;
+    background-color: darkblue;
+    
+  }
+  
+  .sale-breakdown{
+    position: absolute;
+    bottom: 0px;
+    border-top-style: solid;
+    border-width: 1px;
+  }
+  
+  .net-total{
+    padding-left: 10px;
+    text-align: right;
+  }
+  
+  .action-btn{
+    float: right;
+    border-radius: 0%;
+    margin: 0px;
+  }
+  
+  .action-btnx{
+    float: right;
+    border-radius: 0%;
+    margin-right:40px;
+    background-color:darkgrey ;
+  }
+  
+  .other-amount{
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: right;
+    margin-bottom: 0px;
+  }
+  
+  .clear-btn{
+    border-radius: 0%;
+    
+  }
+  
+  .modal {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 10040;
+    overflow: auto;
+    overflow-y: auto;
+  }
+  
+  .modal-header{
+    background-color: #1a0a8a;
+    color: white;
+  }
+  
+  .center-text{
+    text-align: center;
+    padding: 12px;
+  }
+  
+  .top-nav{
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: grey;
+  }
+  
+  .prd-container{
+    height: 555px;
+    overflow: scroll;
+  }
+  
+  /* width */
+  ::-webkit-scrollbar {
+   width:0px;
+  }
+  
+  .action-print{
+    height: 50px;
+    background-color: rgb(165, 162, 162);
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+    margin-left: 20px;
+    border-radius: 6px;
+  }
+  
+  .print-action{
+    padding-bottom: 5px;
+  }
+  
+  .discount-cont{
+    border-radius: 12px;
+    border: 1px solid white;
+    float: left;
+  }
+  
+  .discount-key{
+    padding: 5px; 
+    font-size: 12px;
+  }
+  
+  .discount-val{
+    float: right; 
+    padding-right: 115px;
+  }
+  
+  .cust-container{
+    height: 30px; 
+    background-color: black; 
+    color:white; 
+    padding-top: 3px;
+    margin-bottom: 1px;
+  }
+  
+  a.nav-li{
+    color: white
+  }
+    
+  /*Sale Box End*/
+  
+  /*Print Invoice*/
+    
+  
+  
+  
+    
+     
+    
+      

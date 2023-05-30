@@ -1,0 +1,36 @@
+<!-- The Modal -->
+<div *ngIf="product">
+    <div class="modal " id="detailInfo">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Product Detail</h4>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body">
+               <div class="row prd-info">
+                   <div class="col-lg-4"><b>Name</b></div>
+                   <div class="col-lg-8">{{product.name}}</div>
+               </div>
+               <div class="row prd-info">
+                  <div class="col-lg-4"><b>Description</b></div>
+                  <div class="col-lg-8">{{product.description}}</div>
+              </div>
+              <div class="row prd-info">
+                   <div class="col-lg-4"><b>Price</b></div>
+                   <div class="col-lg-8">₦{{product.selling_price}}</div>
+              </div>
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+      
+          </div>
+        </div>
+    </div>
+</div>

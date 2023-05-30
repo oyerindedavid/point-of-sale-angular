@@ -1,0 +1,46 @@
+.left-bar{
+    border-right-style: solid;
+    border-width: 1px;
+    height: 93vh;
+    position: fixed; /* Stay in place */
+    z-index: 1;
+    background-color: #fdfdff;
+}
+  
+.nav-val{
+    color: white;
+}
+  
+ul {
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+  
+  }
+    
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    
+    /* Change the link color on hover */
+    li a:hover {
+      background-color: #f1f1f1;
+      color: white;
+    }
+  
+    /*Left Bar End*/
+    .vl {
+      border-left: 1px solid grey;
+      height: 30px;
+      margin-top: 10px;
+    }
+  
+  
+   
+  
+    

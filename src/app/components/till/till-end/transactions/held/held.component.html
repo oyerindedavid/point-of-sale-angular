@@ -1,0 +1,53 @@
+<div class="trans-content">
+    <div class="tab-content" >
+      <div class="tab-pane fade in active colap-body" id="home">
+        <div class="colap-heading" data-toggle="collapse" data-target="#demo">Show Held Transaction</div>
+        <div id="demo" class="collapse colap-content">
+            <div class="row held-basket">
+                <div class="col-lg-6">Product name</div>
+                <div class="col-lg-3">10</div>
+                <div class="col-lg-3">₦2,000</div>
+            </div>
+            <div class="row held-basket">
+                <div class="col-lg-6"></div>
+                <div class="col-lg-3"><h4><b>Total</b></h4></div>
+                <div class="col-lg-3"><h4><b>₦12,000</b></h4></div>
+                <div class="col-lg-offset-9">
+                    <button type="button" class="btn btn-danger spacer">Delete</button>
+                    <button type="button" class="btn btn-primary spacer">Unhold</button>
+                </div>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+</div>   
+
+
+<!-- <div class="trans-content">
+    <div class="tab-content" >
+      <div *ngFor="let held of heldTransactions">
+        <div id="menu1" class="tab-pane fade colap-body">
+          <div class="colap-heading" data-toggle="collapse" data-target="#demo2">{{held.username}}</div>
+          <div id="demo2" class="collapse colap-content">
+              <div *ngFor="let basket of held.basket.basketItems">
+                <div class="row held-basket">
+                  <div class="col-lg-6">{{basket.product.name}}</div>
+                  <div class="col-lg-3">{{basket.qty}}</div>
+                  <div class="col-lg-3">₦{{basket.total}}</div>
+                </div>
+              </div>
+              <div class="row held-basket">
+                  <div class="col-lg-6"></div>
+                  <div class="col-lg-3"><h4><b>Total</b></h4></div>
+                  <div class="col-lg-3"><h4><b>₦{{held.basketTotal}}</b></h4></div>
+              </div>
+              <div class="held-basket-action">
+                  <button type="button" class="btn btn-danger spacer" click="deleteHeldTransaction(held)" >Delete</button>
+                  <button type="button" class="btn btn-primary spacer" click="unholdTransaction(held)">Unhold</button>
+              </div>
+           </div>
+          </div>
+      </div>
+      </div>   
+   </div> --> 

@@ -1,0 +1,71 @@
+.trans-content{
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.tab-content{
+    color: white
+}
+
+.navbar{
+    background-color:  rgb(77, 77, 230); 
+}
+
+.nav-li{
+    color: white;
+}
+
+.fa-arrow-left{
+    color:black; 
+    font-size: large;
+  }
+
+a.nav-li:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid rgb(26, 0, 128);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+a.nav-li:hover, a:active {
+    background-color: rgb(26, 0, 128);
+    color: white;
+  }
+
+.held-basket{
+    padding: 15px;
+}
+
+.held-basket-action{
+    float: right;
+}
+
+.spacer{
+    margin-left: 10px;
+}
+
+.colap-body{
+    margin-top: 10px;
+    width: 100%;
+    background-color: white;
+}
+
+.colap-heading{
+    padding: 10px;
+    height: 50px;
+    width: 100%;
+    background-color: grey;
+    cursor: pointer;
+}
+
+.colap-content{
+    color: #000;
+    padding: 3px;
+}
+
+a.nav-link{
+    color: white;
+}

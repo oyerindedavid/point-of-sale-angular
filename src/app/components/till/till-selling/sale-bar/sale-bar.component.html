@@ -1,0 +1,151 @@
+<div class="col-lg-4 sale-bar">
+    <div class="row top-nav">
+        <div class="col-lg-6 center-text"><b>Sale</b></div>
+        <div class="col-lg-6 center-text"><b>
+          <a routerLink="/till-end/transactions/completed">History</a>
+        </b></div>
+    </div>
+
+    <div class="row prd-container">
+      <div *ngIf="basket.customer != null">
+        <div class="col-lg-12 cust-container">
+              <div style="float:left">Customer :</div>
+              <div style="float:right">{{basket.customer.firstname}} {{basket.customer.lastname}}</div>
+        </div>
+      </div>
+
+      <div class="col-lg-12" *ngFor="let basketItem of basket.basketItems">
+        <div class="row prd">
+          <div class="col-lg-12">
+              <div class="row">
+                <div class="col-lg-5">
+                  {{basketItem.product.name}}
+                </div>
+                <div class="col-lg-2">
+                  <div class="col-lg-4 ">{{basketItem.qty}}</div>
+                </div>
+                <div class="col-lg-3 total-price-val">
+                  <div class="pr-val">₦{{basketItem.product.selling_price}}</div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="delete-button-val">
+                      <div>₦{{basketItem.total}}</div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+         <!-- Item action start-->
+          <div class="col-lg-12 action-buton-cont">
+              <div class="row">
+                <div class="col-lg-5">
+                  <div class="row">
+                    <div class="col-lg-4" (click)="addBasketItemDiscount(basketItem)">
+                      <div class=" action-button">
+                        <div class="item-action-icon"><i class="fa fa-handshake-o"></i></div>
+                        <div class="action-btn-text"><h6>DISCOUNT</h6></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4" (click)="addBasketItemNote(basketItem)">
+                      <div class=" action-button">
+                        <div class="item-action-icon"><i class="fa fa-comment-o"></i></div>
+                        <div class="action-btn-text" ><h6>NOTE</h6></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      
+                <div class="col-lg-3 ">
+                  <div class="row prd-qty">
+                    <div class="col-lg-4 decrement" (click)="decrease(basketItem)">-</div>
+                    <div class="col-lg-4 qty" contenteditable="true">{{basketItem.qty}}</div>
+                    <div class="col-lg-4 increment" (click)="increase(basketItem)">+</div>
+                  </div>
+                </div>
+              
+                <div class="col-lg-2 total-price">
+                  <div class="pr-val"></div>
+                </div>
+      
+                <div class="col-lg-2 del-cont" (click)="removeProduct(basketItem)">
+                  <div class="action-button">
+                    <div class="del-icon">X</div>
+                    <div class="action-btn-text"><h6>DELETE</h6></div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div *ngIf="basketItem.discount_id != 0">
+            <div class="col-lg-12">
+              <div class="discount-cont">
+               <div class="discount-key"><b>Discount value</b></div>
+              </div>
+              <div class="discount-val">-₦{{(basketItem.product.selling_price * basketItem.qty) - basketItem.total}}</div>
+         </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-lg-12  sale-breakdown">
+      <div class="row ">
+        <div class="col-lg-6"><h5>Sub Total</h5></div>
+        <div class="col-lg-6 other-amount">₦{{subtotal}}</div>
+      </div>
+
+      <div class="row ">
+          <div class="col-lg-6"><h5>Discount</h5></div>
+          <div class="col-lg-6 other-amount">₦{{discountTotal}}</div>
+        </div>  
+      
+
+      <div class="row">
+        <div class="col-lg-6"><h3><b>Total</b></h3></div>
+        <div class="col-lg-6 net-total"><h3><b>₦{{basket.sub_total}}</b></h3></div>
+      </div> 
+      <div class="row">
+        <div class="col-lg-12 print-action">
+          <div class="col-lg-2 action-print" (click)="addBasketDiscount(basket)">Discount</div>
+          <div class="col-lg-4 action-print"><a class="nav-li" routerLink="/till-end/select-customers">Add Customer</a></div>
+          <div class="col-lg-3 action-print">Print Order</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 ">
+          <div class="col-lg-4 btn btn-success action-btn" data-toggle="modal" data-target="#payNow">Pay now</div>
+          <div class="col-lg-2 btn btn-primary action-btnx" (click)="holdTransactions()">Hold</div>
+          <div class="col-lg-4 btn btn-danger clear-btn" (click)="clearBasket()">Delete</div>
+        </div>
+      </div>
+    </div>
+    </div>
+ </div>
+
+ <app-note-form [basketItem]="selectedBasketItem"> </app-note-form>
+
+  <!-- The Modal  for Pay-->
+  <div class="modal " id="payNow">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            Modal body..
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button  class="btn btn-primary btn-lg" (click)="completeTransaction()" data-dismiss="modal">Pay</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- -- ---------------------------------------------------------- -->

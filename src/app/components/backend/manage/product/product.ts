@@ -1,0 +1,23 @@
+export interface Product{
+    id : number,
+    account_id : number,
+    name : string,
+    description : string,
+    cost_price : number,
+    selling_price : number,
+    margin : number,
+    image : [],
+    category_id : number,
+    barcode : string,
+    popup_note_id : number,
+    supplier_id : number,
+    is_variable_price : number,
+    colour_id : number,
+    brand_id : number,
+    tax : number,
+    tag_id : number,
+    visibility : number,
+    user_id : number,
+    date_created : string,
+    last_updated : string
+}

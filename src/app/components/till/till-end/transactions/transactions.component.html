@@ -1,0 +1,12 @@
+<nav class="navbar">
+    <div style="float:left; padding-top: 12px; padding-left: 10px;">
+       <a style="color: black;" (click)="backClicked()"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </div>  
+      <ul class="nav navbar-nav" style="margin-left: 40%;">
+        <li><a class="nav-li" routerLink="/till-end/transactions/completed"><b>Completed</b></a></li>
+        <li><a class="nav-li" routerLink="/till-end/transactions/held"><b>Held</b></a></li>
+      </ul>
+  </nav>
+  
+  <router-outlet></router-outlet>   
+  

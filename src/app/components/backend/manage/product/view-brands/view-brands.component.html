@@ -1,0 +1,103 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">brand list</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:;">Manage</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Brands</li>
+        </ol>
+    </div>
+    <div class="d-flex">
+        <div class="justify-content-center">
+            <button type="button" routerLink="/mg/add-brand" class="btn btn-primary my-2 btn-icon-text">
+                <i class="fe fe-plus-circle"></i> Add brand
+            </button>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+
+<!-- Row -->
+<div class="row row-sm">
+    <div class="col-lg-12">
+        <div class="card custom-card overflow-hidden">
+            <div class="card-body">
+                <div>
+                    <h6 class="main-content-label mb-1">Categories</h6>
+                    <p class="text-muted card-sub-title">Table showing the list of all categories</p>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="brandTable">
+                        <thead>
+                            <tr>
+                                <th class="wd-20p"></th>
+                                <th class="wd-25p">Name</th>
+                                <th class="wd-20p"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let brand of brands">
+                                <td>
+                                    <a href="javascript:;" (click)="selectbrand(brand, editmodal)"  class="btn btn-sm btn-info mr-1">
+                                        <i class="fe fe-edit-2"></i> Edit
+                                    </a>
+                                </td>
+                                <td>{{brand.name}}</td>
+                                <td>
+                                    <a href="javascript:;" (click)="confirmDelete(basicmodal, brand)" class="btn btn-sm btn-danger">
+                                        <i class="fe fe-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Row -->
+
+<ng-template #basicmodal let-modal>
+    <!-- BASIC MODAL -->
+    <div class="modal-header">
+        <h6 class="modal-title" id="modal-basic-title">Notification!</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <h6>DELETE BRAND</h6>
+        <p>Are you sure you want to delete the brand? You can restore later from trash.</p>
+    </div>
+    <div class="modal-footer">
+        <button (click)="deletebrand()" class="btn ripple btn-primary" type="button" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn ripple btn-secondary" (click)="modal.close('Close click')">No</button>
+    </div>
+</ng-template>
+
+<ng-template #editmodal let-modal>
+    <!-- Select2 modal -->
+    <div class="modal-header">
+        <h6 class="modal-title">Update brand</h6>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <h6>brand</h6>
+        <ngb-alert type="danger" *ngIf="alert" dismissible="false">
+            <span class="alert-inner--text"><strong>Duplicate, </strong> brand name already exist. </span>
+        </ngb-alert>
+        <!-- Select2 -->
+        <form [formGroup]="updatebrandForm">
+            <input formControlName="name" class="form-control" placeholder="brand name" type="text">
+        </form>
+        <!-- Select2 -->
+    </div>
+    <div class="modal-footer">
+        <button (click)="updatebrand(warningmodal, successmodal)" class="btn ripple btn-primary" type="button">{{buttonText}}</button>
+        <button type="button" class="btn ripple btn-secondary" (click)="closeModal()">Close</button>
+    </div>
+
+</ng-template>

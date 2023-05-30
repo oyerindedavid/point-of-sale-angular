@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+       <div class="content-body">
+        <div class="trans-content">
+            <div class="row">
+                <div *ngFor="let locationarea of locationareas">
+                    <div class="col-lg-2 id-card text-center" (click)="selectLocationArea(locationarea)" data-toggle="modal" data-target="#signIn">
+                        <a routerLink="/devices/{{locationarea.id}}"><b class="left-spacer">{{locationarea.name}}</b></a>
+                    </div>
+                </div>
+            </div>
+        </div>  
+       </div>
+   </div>
+</div>
+
+
+ 
